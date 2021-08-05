@@ -1,0 +1,19 @@
+{{isAdmin}}
+<mat-toolbar color="primary">
+    <ng-container *ngIf="!isAdmin; else viewAmin">
+
+    </ng-container>
+    <span>Registro  de Mascotas</span>
+    <span class="spacer"></span>
+    <div>
+        <a mat-button [routerLink]="'/login'">Iniciar Sesion</a>
+        <a mat-button>Cerrar Sesion</a>
+        <a mat-button [routerLink]="'/Admin'">Admin</a>
+    </div>
+</mat-toolbar>
+<ng-template #viewAmin>
+    <button mat-icon-button (click)=" OnToggleSidenav()">
+        <mat-icon>menu_open</mat-icon>
+         </button>
+    <span class="spacer"></span>
+</ng-template>
